@@ -1,5 +1,5 @@
 # Algo-practice
-Repo to practice leetcode style algorithms and writing tests.
+Repo to practice leetcode style algorithms and writing tests in JavaScript.
 
 I'll be updating this every day or so. There are 3 branches
 
