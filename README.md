@@ -8,3 +8,5 @@ I'll be updating this every day or so. There are 3 branches
 2. problems(with tests) -- This branch has tests already written out, you need to solve them
 
 3. solutions -- this branch contains both tests and solutions to each problme. Use these if you ever get stuck. I'll try to comment my solutions as best as I can.
+
+Make sure to run <code>npm i</code> to install jest as a dev dependnecy. And then you can run tests with npm run test ${test-name} example: <code>npm run test two_sum</code>
