@@ -35,8 +35,19 @@ Utilizing recursion is not necessary, nor recommended.
 
 */
 
-function bst(root, callback){
+const bfs = (root, callback) => {
+  //initialize a queue with the root as the first element
+  const queue = [root];
+  //while our queue has length, do the following.
+  while(queue.length){
+    //shift out one node to look at.
+    const currNode = queue.shift();
+    //push it's children if they aren't null
+    if(currNode.left) queue.push(currNode.left)
+    if(currNode.right) queue.push(currNode.right)
+    //then perform thej callback on the element. 
+    callback(currNode.value);
+  }
+};
 
-}
-
-module.exports = {bst};
+module.exports = {BinarySearchTree, bfs};
