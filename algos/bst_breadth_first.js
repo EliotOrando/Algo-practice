@@ -39,4 +39,4 @@ function bst(root, callback){
 
 }
 
-module.exports = {bst};
+module.exports = {BinarySearchTree, bfs};
