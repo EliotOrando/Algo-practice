@@ -24,5 +24,19 @@ return value of 6 b/c maximum area made by the heights is a rectangle of height 
 */
 
 function maxArea (height) {
-
+  //initialize maxArea to -Infinity (to be reassigned), left pointer to index 0, and right pointer to index at the end of the array
+  let maxArea = -Infinity, left = 0, right = height.length - 1;
+  //iterate over array as long as the left and right pointers aren't equal
+  while(left != right){
+    //calculate area of rectangle that is made with current pointers
+      let area = Math.min(height[left], height[right]) * (right - left);
+      //reassign maxArea if needed
+      if(area > maxArea) maxArea = area;
+      //increment left pointer if the left height is lower than right, else decrement right pointer
+      height[left] < height[right] ? left ++ : right --;
+  }
+  //return result. 
+  return maxArea;
 }
+
+module.exports = {maxArea}
