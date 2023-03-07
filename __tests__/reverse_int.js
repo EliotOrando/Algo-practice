@@ -14,4 +14,4 @@ describe('Reverse integer tests:', () => {
     expect(reverseInt(59270)).toBe(7295);
     expect(reverseInt(-6290)).toBe(-926);
   })
-})
+});
