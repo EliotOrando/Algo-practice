@@ -16,59 +16,57 @@ P     I
 */
 
 const convert = (s, numRows) => {
+  //edge case if numRows is 1. 
   if(numRows === 1) return s;
+
   //setup a 2D array with array's representing rows - Initalize this array to have numRows number of arrays
   const zigZagArr = [];
+  //add in numRows number of empty arrays
   for(let i = 0; i < numRows; i++){
       zigZagArr.push([]);
   }
+
+  //initalize our row tracker to zero and goingDown to true. 
   let row = 0;
   let goingDown = true;
 
   //iterate over the string, accessing each character in the string
   for(let char of s){
+      //if we're at row of zero- we need to start going down again. 
       if(row === 0) goingDown = true;
+      //if we're going down, we do logic speficit to that movement direction. 
       if(goingDown){
           //we will push the current element into the next array (vertical down logic)
           zigZagArr[row].push(char);
           //increment our row
           row++;
       }
-   
+      //if we're going up, we do logic speific to that direction -- edge case happends when numRows is 2, so we handle that with a simple conditional
       else if(numRows > 2){
           //do the logic to add in our ascending diagnol characters 
           zigZagArr.forEach((array, index) => {
+            //add in the character at the row we're add, add in am empty string for the other characters. 
               index === row ? array.push(char) : array.push('');
           });
           row--;
       }
-      //handle if we are switching directions. 
-      //there are 2 cases that we need to consider
-      //first case is that we've gone down a whole row - our row === numRows 
+      //handle if we are switching directions. 2 cases to consider
+      //first case is that we've made it to then end of the rows. --> our row === numRows 
       if(row === numRows){
           //reassign goingDown to false
           goingDown = false;
-          //reassign the row to be 1 less than the zigzagarrs final elment indicies 
+          //reassign the row to be 1 less than the zigzagarrs final elment indicies (to get the row BEFORE the ending row).
           row = zigZagArr.length - 2;
       }
-        //second case is that we've gone diagonally UP all our rows - our row === 0. 
-      else if(row === 0){
-           //reassign going Down to true
-           goingDown = true;
-      }
-      // console.log('new iteration completed. going Down:', goingDown);
-      // console.log('2d Arr:', zigZagArr);
-      // console.log('***************');
+        //second case is that we've gone diagonally UP all our rows & row is now 0, we reassign it to true
+      else if(row === 0) goingDown = true;
   }
-  // console.log('finished 2D arr:', zigZagArr);
 
-  //when our 2d array is finished - we can join the sub-array's into strings, and concat them to return our final string value. 
-  const outputString = zigZagArr.reduce((accumulatedString, nextArr) => {
+  //when our 2d  array is finished- we can join the sub-array's into strings, and concat them to return our final string value. 
+  return zigZagArr.reduce((accumulatedString, nextArr) => {
       const currString = nextArr.join('');
       return accumulatedString + currString;
   }, '');
-  // console.log('outputString:', outputString);
-  return outputString;
 };
 
 module.exports = {convert};
