@@ -39,21 +39,6 @@ class BinaryTree {
 function nodeDepths(root) {
   // we need to determine depths of each level, and sum all of them
   let depthCount = 0;
-  const stack = [{ node: root, depth: 0 }];
-
-  while (stack.length) {
-    const curr = stack.pop();
-    const { node, depth } = curr;
-
-    depthCount += depth;
-    if (node.left) {
-      stack.push({ node: node.left, depth: depth + 1 });
-    }
-    if (node.right) {
-      stack.push({ node: node.right, depth: depth + 1 });
-    }
-  }
-  return depthCount;
 }
 
 // RECURSIVE SOLUTION
