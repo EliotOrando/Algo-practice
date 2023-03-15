@@ -8,7 +8,7 @@ array = [8, 2, 9, 5, 6, 3]
 output: [2, 3, 5, 5, 6, 8, 9]
 */
 
-function bubbleSort(array) {
+function bubble_sort(array) {
   if (array.length === 0) return [];
   let sort = false;
   let count = 0;
@@ -26,4 +26,4 @@ function bubbleSort(array) {
   return array;
 }
 
-module.exports = { bubbleSort };
+module.exports = { bubble_sort };
