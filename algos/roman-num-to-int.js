@@ -39,12 +39,15 @@ const romanValue = {
 }
 
 const romanToInt = (string) => {
+  //solution for iterative is to iterate over all characters in the string and add in their values to the total.
   let total = 0;
     for(let i = 0; i < string.length -1 ; i++){
         let currVal = romanValue[string[i]], nextVal = romanValue[string[i+1]];
+        //this is where the magic happens. If the current value is LESS than the next element, we subtract it's value from total
+        //instead of adding it in (i.e. IV  = 4 --> 5 (from the V) MINUS 1 (from the I))
         currVal < nextVal ? total -= currVal : total += currVal;
     }
-
+    //return out the total plus the last char's value in the string (we didn't get to it in for loob b/c we needed next values)
     return total + romanValue[string[string.length-1]];
 }
 
