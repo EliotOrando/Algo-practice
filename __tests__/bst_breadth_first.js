@@ -1,5 +1,5 @@
-const {BinarySearchTree, bfs} = require('../algos/bst_breadth_first');
-
+const { bfs } = require('../algos/bst_breadth_first');
+const { BinarySearchTree } = require('../BinarySearchTree');
 describe('breadth first search', () => {
   let results = [];
   let bst;

@@ -1,5 +1,5 @@
-const { removeNthFromEnd, LinkedList, Node } = require('../algos/remove-Nth-to-last');
-
+const { removeNthFromEnd } = require('../algos/remove-Nth-to-last');
+const {LinkedList, Node} = require('../linkedList');
 describe('remove nth to last tests', () => {
   const ll = new LinkedList();
   beforeEach(() => {

@@ -1,4 +1,5 @@
-const {LinkedList, Node, mergeTwoLists} = require('../algos/mergeTwoLists');
+const {mergeTwoLists} = require('../algos/mergeTwoLists');
+const {LinkedList, Node} = require('../linkedList');
 
 const llToArr = (node) => {
   const returnArr = [];

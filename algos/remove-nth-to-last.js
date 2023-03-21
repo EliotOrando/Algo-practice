@@ -12,15 +12,7 @@ Input: head = [1], n = 1
 Output: []
 
 */
-function LinkedList() {
-  this.head = null;
-}
 
-// NOTE: needs to be es5 function definition
-function Node(val) {
-  this.val = val;
-  this.next = null;
-}
 
 const removeNthFromEnd = (head, n) => {
   if(!head.next) return null;
@@ -44,4 +36,4 @@ const removeNthFromEnd = (head, n) => {
     return head;
 }
 
-module.exports = {LinkedList, Node, removeNthFromEnd}
+module.exports = {removeNthFromEnd}

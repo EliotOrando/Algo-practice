@@ -1,9 +1,3 @@
-function BinarySearchTree(value) {
-  this.value = value;
-  this.right = null;
-  this.left = null;
-}
-
 /*
 
 Given the root of a binary search tree and a callback function, apply the
@@ -50,4 +44,4 @@ const bfs = (root, callback) => {
   }
 };
 
-module.exports = {BinarySearchTree, bfs};
+module.exports = { bfs };

@@ -68,5 +68,4 @@ const letterCombinations = digits => {
   
     return returnArr;
 }
-console.log(letterCombinations('259'));
 module.exports = { letterCombinations }

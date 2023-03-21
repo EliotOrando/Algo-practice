@@ -20,15 +20,6 @@ Input: list1 = [], list2 = [0]
 Output: [0]
 
 */
-function LinkedList() {
-  this.head = null;
-}
-
-// NOTE: needs to be es5 function definition
-function Node(val) {
-  this.val = val;
-  this.next = null;
-}
 
 const mergeTwoLists = (l1, l2) => {
   //edge cases in case there isn't a node in one of the lists
@@ -62,8 +53,5 @@ const mergeTwoLists = (l1, l2) => {
   if(l2) l1.next = l2;
   return head;
 }
-//   const node = new Node(1);
-//     node.next = new Node(2);
-//     node.next.next = new Node(3);
-// console.log(mergeTwoLists(node, null))
-module.exports = {LinkedList, Node, mergeTwoLists}
+
+module.exports = {mergeTwoLists}

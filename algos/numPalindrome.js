@@ -20,7 +20,6 @@ Explanation: From left to right, it reads -121. From right to left, it becomes 1
 const numPalindrome = (x) => {
   if(x < 0) return false;
   const numString = x.toString();
-  console.log('numString:', numString);
   let left = 0, right = numString.length -1;
   while(left < right){
       if(numString[left] !== numString[right]) return false;

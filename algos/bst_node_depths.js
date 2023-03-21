@@ -67,4 +67,4 @@ function nodeDepths(root) {
 //   return level + sumDepths(node.left, level + 1) + sumDepths(node.right, level + 1)
 // }
 
-module.exports = { BinaryTree, nodeDepths };
+module.exports = { nodeDepths };
