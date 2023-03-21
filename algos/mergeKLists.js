@@ -30,13 +30,16 @@ Output: []
 const { mergeTwoLists } = require('./mergeTwoLists');
 
 const mergeKLists = (lists) => {
+  //edge cases
   if(lists.length === 0) return null; 
-    if(lists.length === 1) return lists[0];
-    let head = null;
-    lists.forEach(linkedList => {
-      head = mergeTwoLists(linkedList, head);
-    });
-    return head;
+  if(lists.length === 1) return lists[0];
+
+  //iterate over each linked list, and merge it with the current head linked list. Then return the head
+  let head = null;
+  lists.forEach(linkedList => {
+    head = mergeTwoLists(linkedList, head);
+  });
+  return head;
 }
 
 module.exports = {mergeKLists}
