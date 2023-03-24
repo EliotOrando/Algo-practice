@@ -13,14 +13,7 @@ fizzbuzz(16);
 */
 
 const fizzbuzz = num => {
-  const output = [];
-  for(let i = 1; i <= num; i++){
-    let string = '';
-    if(i % 3 === 0) string += 'fizz';
-    if(i % 5 === 0) string += 'buzz';
-    string === '' ? output.push(i) : output.push(string);
-  }
-  return output;
+  
 }
 
 module.exports = { fizzbuzz }
